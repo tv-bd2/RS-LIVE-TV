@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-<title>RUBEL LIVE TV</title>
+<title>Rubel Live TV</title>
 
 <script src="https://content.jwplatform.com/libraries/IDzF9Zmk.js"></script>
 <script>
@@ -64,49 +64,6 @@ font-size:18px;
 letter-spacing:1px;
 }
 
-#logo{
-position:fixed;
-top:10px;
-right:10px;
-z-index:999;
-background:rgba(0,0,0,.5);
-color:#fff;
-padding:7px 14px;
-border-radius:30px;
-font-size:14px;
-}
-
-#live{
-position:fixed;
-top:10px;
-left:10px;
-z-index:999;
-background:red;
-color:#fff;
-padding:7px 14px;
-border-radius:30px;
-font-size:14px;
-font-weight:bold;
-animation:blink 1s infinite;
-}
-
-@keyframes blink{
-50%{opacity:.4;}
-}
-
-#reload{
-position:fixed;
-bottom:20px;
-right:15px;
-z-index:999;
-background:rgba(255,255,255,.15);
-color:#fff;
-padding:10px 14px;
-border-radius:50%;
-font-size:22px;
-cursor:pointer;
-}
-
 .jwplayer{
 height:100%!important;
 width:100%!important;
@@ -121,10 +78,6 @@ width:100%!important;
 <p>Loading Stream...</p>
 </div>
 
-<div id="live">● LIVE</div>
-<div id="logo"></div>
-<div id="reload" onclick="location.reload()">↻</div>
-
 <div id="player"></div>
 
 <script>
@@ -132,10 +85,10 @@ const player = jwplayer("player");
 
 player.setup({
 playlist:[{
-title:"Rubel Live TV",
+title:"",
 sources:[
 {
-file:"https://mumt05.tangotv.in/SANGEETBANGLA/index.m3u8",
+file:"https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/index.m3u8",
 type:"hls",
 label:"HD"
 }
