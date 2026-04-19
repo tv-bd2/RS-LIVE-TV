@@ -1,71 +1,241 @@
 <!doctype html>
-<html lang="bn">
+
+<html>
+
+
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RS Live TV</title>
-    
-    <link rel="shortcut icon" type="x-icon" href="https://i.postimg.cc/mD1VCt2C/RS-Live.png">
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
 
-    <script>
-        // রাইট ক্লিক বন্ধ করার সঠিক ফাংশন
-        function disableClick() {
-            document.oncontextmenu = function(event) {
-                alert('Privacy Protection: Right click is disabled.');
-                return false;
-            };
-        }
+	<script>
 
-        // চ্যানেল পরিবর্তনের ফাংশন
-        function changeChannel(url) {
-            // প্লেয়ার ফ্রেমের সোর্স পরিবর্তন
-            const playerFrame = document.getElementsByName('player')[0];
-            playerFrame.src = "http://rslivetv.wuaze.com/RS.html?url=" + url;
-        }
-    </script>
+		function disableClick(){
 
-    </head>
+			ducument.oneclick=function(event){
+
+				if (event.button == 2) {
+
+					alert('Right Click Message');
+
+					return false;
+
+				}
+
+			}
+
+		}
+
+	</script>
+
+    <link rel="shortcut icon" type="x-icon" href="https://i.postimg.cc/mD1VCt2C/RS-Live.png">    
+
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>RS Live TV</title>
+
+<link href="bootstrap.min.css" rel="stylesheet">
+
+<link href="style.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+<![endif]-->
+
+</head>
 
 <body onLoad="disableClick()">
 
-    <div class="container tv-area">
-        <div class="row">
-            <div class="col-xs-12 col-md-10 tv-view">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe name="player" class="embed-responsive-item" allowfullscreen src="channel.html"></iframe>
-                </div>
-            </div>
+	
 
-            <div class="col-xs-12 col-md-2 channel-list">
-                <ul class="thumbnail-slider" style="list-style: none; padding: 0;">
-                    
-                    <li><a href="javascript:void(0);" onclick="changeChannel('http://kst.moonplex.net:8080/CH10/tracks-v1a1/mono.m3u8')"><img src="https://i.postimg.cc/rwn28tr8/20250403-193100.png" alt="Star Sports 1"></a></li>
+<div class="container tv-area">
 
-                    <li><a href="javascript:void(0);" onclick="changeChannel('http://flussonic.deltainfonet.com/02_TSPORTS/tracks-v1a1/mono.m3u8')"><img src="https://i.postimg.cc/QtRZG7gz/T-sports.png" alt="Tsports"></a></li>
+  <div class="col-xs-12 col-md-10 tv-view">
 
-                    <li><a href="javascript:void(0);" onclick="changeChannel('https://flussonic.defineatoz.com/backup/index.m3u8?token=3be59369dbf91900d5bc9fd69e43a43e156d0c2d-043b54c0a14d3f40778563d8e91f8009-1776413255-1776402455&remote=103.111.225.183')"><img src="https://i.postimg.cc/K8cVWQSz/nagorik-tv.png" alt="Nagorik Tv"></a></li>
+    <div class="embed-responsive embed-responsive-16by9">
 
-                    </ul>
-            </div>
-        </div>
+      <iframe name="player" class="embed-responsive-item" allowfullscreen src="channel.html"></iframe>
 
-        <div class="marquee yellow" style="background: #ff0; padding: 5px; margin-top: 10px;">
-            <marquee scrollamount="5" direction="left" onmouseover="stop()" onmouseout="start()">
-                *** বর্তমানে আমাদের ওয়েব সাইট আপডেট চলছে, আপডেট চলাকালীন সময় কিছু চ্যানেল ডাউন হতে পারে। টিভি চ্যানেল প্লে হতে ৫ থেকে ১০ সেকেন্ড টাইম নিতে পারে। *** </marquee>
-        </div>
-
-        <footer>
-            <div style="text-align: center; background: #222; padding: 10px; margin-top: 20px;">
-                <span style="font-family: arial; color: yellow;">© 2024 Rs Live Tv || <span style="color: white;">All Rights Reserved</span></span>
-            </div>
-        </footer>
     </div>
 
-    <script src="script.js"></script>
+	  
+
+  </div>
+
+  <div class="col-xs-12 col-md-2 channel-list">
+
+    <ul class="thumbnail-slider">
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=http://kst.moonplex.net:8080/CH10/tracks-v1a1/mono.m3u8'"><img src="https://i.postimg.cc/rwn28tr8/20250403-193100.png" alt="Star Sports 1"></a></li>
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=http://flussonic.deltainfonet.com/02_TSPORTS/tracks-v1a1/mono.m3u8'"><img src="https://i.postimg.cc/QtRZG7gz/T-sports.png" alt="Tsports"></a></li> 
+
+	    <li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://flussonic.defineatoz.com/backup/index.m3u8?token=3be59369dbf91900d5bc9fd69e43a43e156d0c2d-043b54c0a14d3f40778563d8e91f8009-1776413255-1776402455&remote=103.111.225.183'"><img src="https://i.postimg.cc/K8cVWQSz/nagorik-tv.png" alt="Nagorik Tv"></a></li>
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/index.m3u8'"><img src="https://i.postimg.cc/zDbjrxLb/Btv-HD.png" alt="B Tv"></a></li>
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1722/output/index.m3u8'"><img src="https://i.postimg.cc/hjxfCQjj/Atn-Bangla1.png" alt="Atn Bangla"></a></li>
+
+
+
+ <li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://ekusheyserver.com/etvlivesn.m3u8'"><img src="https://i.postimg.cc/HLchzXGY/Ekushe.png" alt="EkushyTv"></a></li>
+
+ 
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://byphdgllyk.gpcdn.net/hls/deeptotv/index.m3u8?'"><img src="https://i.postimg.cc/7ZcB5h5p/dipto.png" alt="DeeptoTv"></a></li>
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1706/output/index.m3u8'"><img src="https://i.postimg.cc/TwvMq4yd/20250602-071314.png" alt="Atn News"></a></li>
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=http://alvetv.com/moviebanglatv/8080/index.m3u8'"><img src="https://i.postimg.cc/0Q1cC4dn/Movie-Bangla.png" alt="MOVIE BANGLA"></a></li>
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://deshitv.deshitv24.net/live/myStream/playlist.m3u8'"><img src="https://i.postimg.cc/rySM2syH/20250403-184538.png." alt="DESHI TV"></a></li>
+
+ 
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://boishakhi.sonarbanglatv.com/boishakhi/boishakhitv/index.m3u8'"><img src="https://i.postimg.cc/sDsyjzvg/boishakhi.png" alt="Boishakhi Tv"></a></li>
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=http://kst.moonplex.net:8080/CH15/tracks-v1a1/mono.m3u8'"><img src="https://i.postimg.cc/ZKWKrsfX/DBC-News.png" alt="DBC News"></a></li>
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=http://kst.moonplex.net:8080/CH5/tracks-v1a1/mono.m3u8'"><img src="https://i.postimg.cc/hGWj4816/Jamuna-Tv.png" alt="Jamuna Tv"></a></li>
+
+
+
+
+
+ 
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://mytvbangla.com/0.m3u8'"><img src="https://i.postimg.cc/0y7ppp9f/20241118-164338.png" alt="My Tv"></a></li> 
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://dzkyvlfyge.erbvr.com/PeaceTvBangla/index.m3u8'"><img src="https://i.postimg.cc/rmH06m8s/20241028-184346.png" alt="PEACE TV BANGLA"></a></li>
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=http://kst.moonplex.net:8080/CH12/tracks-v1a1/mono.m3u8'"><img src="https://i.postimg.cc/jSr0LMBH/DURONTO-TV.png" alt="Duronto Tv"></a></li>
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://server.thelegitpro.in/rongeentv/rongeentv/tracks-v1a1/mono.m3u8'"><img src="https://i.postimg.cc/TYX7wDW0/RONGEEN-TV.jpg" alt="RONGEEN TV"></a></li>
+
+ 
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8?DVR'"><img src="https://i.postimg.cc/qqxr0RDG/20250403-185901.png" alt="PBS KIDS"></a></li>
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://streams.spacetoon.com/live/stchannel/smil:livesmil.smil/chunklist.m3u8'"><img src="https://i.postimg.cc/85GnGb2q/20250403-190145.png" alt="SPACE TOON"></a></li>
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://catchup.yuppcdn.net/amazonv2/36/preview/zeebangla/master/chunklist.m3u8'"><img src="https://i.postimg.cc/ZRjjSzFd/20250403-190441.png" alt="ZEE BANGLA HD"></a></li>
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=http://kst.moonplex.net:8080/CH3/tracks-v1a1/mono.m3u8?hdnts='"><img src="https://i.postimg.cc/V6t2fM4G/starjalsha.png" alt="STAR JALSHA"></a></li>
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://live-bangla.akamaized.net/liveabr/pub-iobanglakp3sff/live_720p/chunks.m3u8'"><img src="https://i.postimg.cc/fypczz3J/enter10bangla.png" alt="ENTER10 BANGLA"></a></li>
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://yupptvcatchupire.yuppcdn.net/preview/colorsbanglahd/800.m3u8?hdnts='"><img src="https://i.postimg.cc/bJFbgy93/colorsbangla.png" alt="COLORS BANGLA"></a></li>
+
+	    
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/mastiii/master.m3u8'"><img src="https://i.postimg.cc/W16WsyVT/masti-music.png" alt="MASTI MUSIC"></a></li>
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://d35j504z0x2vu2.cloudfront.net/v1/manifest/0bc8e8376bd8417a1b6761138aa41c26c7309312/9x-jalwa/47bdb49d-f6f3-4927-a9ea-12c4c5afc732/0.m3u8'"><img src="https://i.postimg.cc/WzD9jhgH/20250403-191220.png" alt="9xjalwa"></a></li>
+
+ 
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://d35j504z0x2vu2.cloudfront.net/v1/manifest/0bc8e8376bd8417a1b6761138aa41c26c7309312/yrf-music/5e60e1a9-c796-4bf2-ab37-a1d9c98ca0b3/4.m3u8'"><img src="https://i.postimg.cc/2Sxg0LwQ/Yrf.png" alt="YrfMusic"></a></li> 
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9banaen8yq/liveabr/playlist.m3u8'"><img src="https://i.postimg.cc/pXb0Nvjp/20250403-191930.png" alt="TV9Bangla"></a></li>
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://cc-jytb1qhmgqh5a.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-jytb1qhmgqh5a/playlist.m3u8'"><img src="https://i.postimg.cc/QCwjx9P9/20250403-192515.png" alt="The Movie Club"></a></li>
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://live-stream.utkalbongo.com/hls/livebanglatvstream.m3u8'"><img src="https://i.postimg.cc/4y7TM4dJ/Bangla-Plus.png" alt="BANGLA PLUS"></a></li>
+
+
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=http://103.145.48.150:90/laosat24/taratv/index.m3u8'"><img src="https://i.postimg.cc/8c2VV8JL/20241103-070341.png" alt="TARA TV"></a></li> 
+
+    	
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://live-stream.utkalbongo.com/utkalbongo/stream2/hls/amarbanglatwolivestream.m3u8'"><img src="https://i.postimg.cc/BnGGY0G0/Amar-Digital.png" alt="AMAR DIGITAL"></a></li>
+
+  
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://live-stream.utkalbongo.com/utkalbongo/stream10/hls/amarbangla.m3u8'"><img src="https://i.postimg.cc/4dnC74pz/Amar-Bangla.png" alt="AMAR BANGLA"></a></li>
+
+  
+
+<li><a href="javascript:void();" onclick="player.location.href='http://rslivetv.wuaze.com/RS.html?url=https://live-stream.utkalbongo.com/utkalbongo/stream7/hls/montvlivestream.m3u8'"><img src="https://i.postimg.cc/027N2Zk9/Mon.png" alt="MON"></a></li>
+
+
+
+
+
+	</ul>
+
+  </div>
+
+<!-- container -->
+
+ <div id="rmpPlayer"></div> <div class="marquee yellow"><span> <i class=""style="font-size:20pt" aria-hidden="true"></i></span> <marquee scrollamount="5" direction="left" onmouseover="stop()" onmouseout="start()">*** বর্তমানে আমাদের ওয়েব সাইট আপডেট চলছে, আপডেট চলাকালীন সময় কিছু চ্যানেল ডাউন হতে পারে। টিভি চ্যানেল প্লে হতে ৫ থেকে ১০ সেকেন্ড টাইম নিতে পারে, তবে সেটা সার্ভার ও আপনার ইন্টারনেটের উপর নির্ভর করবে। ⛔ আপনার মতামত জানাতে আমাদের টেলিগ্রাম গ্রুপে জয়েন করুন, এবং কোনো চ্যানেল প্লে না হলে সেটাও বলুন, ধন্যবাদ। *** </marquee> </div> 	
+
+	
+
+		<!-- container --> 
+
+<footer> 	
+
+		<div style="text-align: center; background-size: cover;"> <div style="text-align: center;"><span style="font-family: arial;"><span style="color: yellow;">©️ 2024 Rs Live Tv || <span style="color: white;">All Rights Reseved </span> </div> </ul> </footer> 
+
+		 </body><script src="script.js"></script> 
+
+	</div>
+
+</div> </a> </div>
+
+<script src="script.js"></script>
+
+
+
 </body>
 
-</html>
+
+
+        </html>
