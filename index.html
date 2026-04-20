@@ -5,74 +5,65 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RS Live TV - Official</title>
+    <title>RS Live TV</title>
     
     <link rel="shortcut icon" type="x-icon" href="https://i.postimg.cc/mD1VCt2C/RS-Live.png">
     <link href="bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 
     <style>
-        /* প্রফেশনাল ডার্ক নোটিশ বোর্ড */
+        /* চিকন এবং ডার্ক নোটিশ বার */
         .marquee-container {
-            background: #d62929; /* লাল ব্যাকগ্রাউন্ড */
-            color: #ffffff;
-            padding: 10px 0;
-            font-size: 16px;
-            font-weight: 500;
+            background: #121212; /* ডার্ক ব্যাকগ্রাউন্ড */
+            color: #ff4444; /* হালকা লাল টেক্সট */
+            padding: 5px 0; /* প্যাডিং কমিয়ে চিকন করা হয়েছে */
+            font-size: 13px;
             display: flex;
             align-items: center;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
         }
         .notice-label {
-            background: #fff;
-            color: #d62929;
-            padding: 2px 15px;
-            margin-left: 10px;
-            border-radius: 4px;
+            background: #ff4444;
+            color: #fff;
+            padding: 0 10px;
+            margin-left: 5px;
+            border-radius: 3px;
             font-weight: bold;
-            text-transform: uppercase;
-            font-size: 14px;
+            font-size: 11px;
             white-space: nowrap;
         }
 
-        /* আকর্ষণীয় ফুটার এবং টেলিগ্রাম সেকশন */
+        /* আকর্ষণীয় ফুটার কার্ড - মোবাইল ফ্রেন্ডলি */
         .footer-premium {
-            background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%);
-            padding: 50px 0 30px;
-            border-top: 2px solid #333;
+            background: #0a0a0a;
+            padding: 30px 0;
             text-align: center;
         }
         .tg-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid #444;
+            background: #161616;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #222;
             display: inline-block;
-            max-width: 500px;
-            width: 90%;
+            width: 95%; /* মোবাইলে পুরো জায়গা নিবে */
+            max-width: 400px;
         }
         .telegram-btn {
             display: inline-block;
             background: #0088cc;
             color: #fff !important;
-            padding: 12px 35px;
-            border-radius: 8px;
-            font-size: 18px;
+            padding: 10px 25px;
+            border-radius: 6px;
+            font-size: 15px;
             font-weight: bold;
             text-decoration: none !important;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-            box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);
-        }
-        .telegram-btn:hover {
-            background: #00a2f3;
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 136, 204, 0.6);
+            margin-top: 15px;
         }
         .copyright {
-            margin-top: 40px;
-            color: #666;
-            font-size: 13px;
+            margin-top: 25px;
+            color: #555;
+            font-size: 12px;
         }
     </style>
 </head>
@@ -82,7 +73,7 @@
 <div class="container tv-area">
     <div class="row">
         <div class="col-xs-12 col-md-10 tv-view">
-            <div class="embed-responsive embed-responsive-16by9" style="border: 1px solid #444; border-radius: 10px; overflow: hidden; background: #000;">
+            <div class="embed-responsive embed-responsive-16by9" style="border: 1px solid #222; border-radius: 8px; overflow: hidden;">
                 <iframe name="player" class="embed-responsive-item" allowfullscreen src="channel.html"></iframe>
             </div>
         </div>
@@ -90,33 +81,32 @@
         <div class="col-xs-12 col-md-2 channel-list">
             <ul class="thumbnail-slider">
                 <li><a href="javascript:void(0);" onclick="player.location.href='https://rs-player.netlify.app/rs-player?url=https://fancode-bd-srhady.vercel.app/new_zealand_vs_bangladesh_142067_english.m3u8'"><img src="https://i.postimg.cc/NjGJDrn7/2nd-ODI-Bangladesh-vs-New-Zealand-Old-Match-Card1-(1).jpg" alt="BAN vs NEW"></a></li>
-                </ul>
+            </ul>
         </div>
     </div>
 </div>
 
 <div class="marquee-container">
-    <div class="notice-label">UPDATE</div>
-    <marquee scrollamount="6" onmouseover="this.stop()" onmouseout="this.start()">
-        প্রিয় দর্শক, সার্ভার আপডেটের কাজ চলছে। কোনো চ্যানেল সাময়িকভাবে বন্ধ থাকলে বা লোডিং নিতে সময় নিলে দয়া করে ধৈর্য ধরুন। সব লেটেস্ট আপডেট পেতে আমাদের সাথেই থাকুন।
+    <div class="notice-label">NOTICE</div>
+    <marquee scrollamount="5" onmouseover="this.stop()" onmouseout="this.start()">
+        সার্ভার আপডেট চলছে, চ্যানেল লোড হতে ৫-১০ সেকেন্ড সময় লাগতে পারে। কোনো সমস্যা হলে গ্রুপে জানান।
     </marquee>
 </div>
 
 <footer class="footer-premium">
     <div class="container">
         <div class="tg-card">
-            <h3 style="color: #fff; margin-bottom: 15px;">চ্যানেল রিকোয়েস্ট করতে চান?</h3>
-            <p style="color: #aaa; font-size: 15px; line-height: 1.6;">
-                নতুন কোনো চ্যানেল যুক্ত করা বা কোনো সমস্যার দ্রুত সমাধানের জন্য আমাদের অফিসিয়াল টেলিগ্রাম গ্রুপে এখনই জয়েন করুন। সেখানে পাবেন ২৪/৭ সাপোর্ট এবং সকল চ্যানেলের ডাইরেক্ট আপডেট!
+            <h4 style="color: #fff; margin-bottom: 10px; font-size: 18px;">সাপোর্ট প্রয়োজন?</h4>
+            <p style="color: #888; font-size: 14px; margin-bottom: 0;">
+                সব আপডেট এবং চ্যানেল রিকোয়েস্টের জন্য আমাদের টেলিগ্রাম গ্রুপে যোগ দিন।
             </p>
             <a href="https://t.me/bestiptvlive" target="_blank" class="telegram-btn">
-                <i class="fa fa-paper-plane"></i> JOIN TELEGRAM GROUP
+                JOIN TELEGRAM
             </a>
         </div>
 
         <div class="copyright">
-            © 2026 <span style="color: #d62929; font-weight: bold;">RS LIVE TV</span> | Premium Streaming Service <br>
-            All Rights Reserved.
+            © 2026 RS LIVE TV | All Rights Reserved
         </div>
     </div>
 </footer>
