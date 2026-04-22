@@ -2,144 +2,91 @@
 <html lang="bn">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RS Live TV</title>
     <link rel="shortcut icon" type="x-icon" href="https://i.postimg.cc/mD1VCt2C/RS-Live.png">
     <link href="bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <style>
-        /* চিকন এবং ডার্ক নোটিশ বার */
-        .marquee-container {
-            background: #121212;
-            color: #ffffff;
-            padding: 5px 0;
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
-        }
-        .notice-label {
-            background: #ff4444;
-            color: #fff;
-            padding: 0 10px;
-            margin-left: 5px;
-            border-radius: 3px;
-            font-weight: bold;
-            font-size: 11px;
-            white-space: nowrap;
-        }
-        /* আকর্ষণীয় ফুটার কার্ড - মোবাইল ফ্রেন্ডলি */
-        .footer-premium {
-            background: #0a0a0a;
-            padding: 30px 0;
-            text-align: center;
-        }
-        .tg-card {
-            background: #161616;
-            padding: 20px;
-            border-radius: 12px;
+        /* ফুলস্ক্রিন সাদা দাগ দূর করার চূড়ান্ত ফিক্স */
+        .tv-view .embed-responsive {
             border: 1px solid #222;
-            display: inline-block;
-            width: 95%;
-            max-width: 400px;
+            border-radius: 8px;
+            background: #000;
+            overflow: hidden;
+            outline: none !important;
         }
-        .telegram-btn {
-            display: inline-block;
-            background: #0088cc;
-            color: #fff !important;
-            padding: 10px 25px;
-            border-radius: 6px;
-            font-size: 15px;
-            font-weight: bold;
-            text-decoration: none !important;
-            margin-top: 15px;
+
+        .embed-responsive:fullscreen, 
+        .embed-responsive:-webkit-full-screen,
+        .embed-responsive:-ms-fullscreen,
+        .embed-responsive:fullscreen * {
+            border: 0 !important;
+            border-radius: 0 !important;
+            outline: none !important;
+            background: #000 !important;
         }
-        .copyright {
-            margin-top: 25px;
-            color: #555;
-            font-size: 12px;
+
+        iframe {
+            border: 0 !important;
+            outline: none !important;
+            display: block;
         }
-        /* অ্যাড ব্যানার স্টাইল */
-        .ad-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0;
-            width: 100%;
-        }
+
+        /* নোটিশ এবং ব্যানার স্টাইল আগের মতোই থাকবে */
+        .marquee-container { background: #121212; color: #fff; padding: 8px 0; display: flex; align-items: center; border-top: 1px solid #333; }
+        .notice-label { background: #ff4444; color: #fff; padding: 2px 12px; margin-left: 10px; border-radius: 4px; font-weight: bold; font-size: 12px; }
+        .footer-premium { background: #0a0a0a; padding: 30px 0; text-align: center; }
+        .tg-card { background: #161616; padding: 12px 20px; border-radius: 12px; border: 1px solid #222; display: inline-block; width: 95%; max-width: 400px; }
+        .telegram-btn { display: inline-block; background: #0088cc; color: #fff !important; padding: 6px 20px; border-radius: 6px; font-weight: bold; text-decoration: none; font-size: 13px; }
+        
+        /* RS TV ব্যানার */
+        .tio-style-banner-fixed { width: 320px; height: 50px; background: url('https://img.freepik.com/free-vector/abstract-dark-blue-futuristic-digital-background_1017-23842.jpg') center/cover; position: relative; overflow: hidden; border-radius: 6px; display: flex; align-items: center; margin: 0 auto 15px auto; }
+        .banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,210,255,0.1) 100%); z-index: 1; }
+        .content-wrapper { position: relative; z-index: 2; display: flex; align-items: center; width: 100%; padding: 0 8px; justify-content: space-between; }
+        .live-circle { background: #ff0000; color: white; font-size: 8px; padding: 2px 6px; border-radius: 12px; display: flex; align-items: center; gap: 4px; }
+        .brand-logo { font-weight: 900; font-size: 14px; color: #fff; }
+        .brand-logo .tv { color: #ff9100; }
     </style>
 </head>
 
 <body onLoad="disableClick()">
-
     <div class="container tv-area">
         <div class="row">
             <div class="col-xs-12 col-md-10 tv-view">
-                <div class="embed-responsive embed-responsive-16by9" style="border: 1px solid #222; border-radius: 8px; overflow: hidden;">
+                <div class="embed-responsive embed-responsive-16by9">
                     <iframe name="player" class="embed-responsive-item" allowfullscreen src="channel.html"></iframe>
                 </div>
             </div>
 
             <div class="col-xs-12 col-md-2 channel-list">
-                <ul class="thumbnail-slider">
-                    <li><a href="javascript:void(0);" onclick="player.location.href='https://rs-player.netlify.app/rs-player?url=https://bestiptv.bestiptv-pro.workers.dev/?url=http://flussonic.deltainfonet.com/02_TSPORTS/tracks-v1a1/mono.m3u8'"><img src="https://www.fancode.com/skillup-uploads/cms-media/BAn-vs-NZ_ODIs_fc-web.jpg" alt="BAN vs NEW"></a></li>
-                    <li><a href="javascript:void(0);" onclick="player.location.href='https://rs-player.netlify.app/rs-player?url=https://bestiptv.bestiptv-pro.workers.dev/?url=http://flussonic.deltainfonet.com/02_TSPORTS/tracks-v1a1/mono.m3u8'"><img src="https://yt3.googleusercontent.com/bFiobvUTC9dzqtqmHrGpMvIlQ2SpWYVKQFd3M8iP0hKqENuPOUNNVzaQQoJufoIFH-_M0UYn7w=s900-c-k-c0x00ffffff-no-rj" alt="Tsports"></a></li>
-                    <li><a href="javascript:void(0);" onclick="player.location.href='https://rs-player.netlify.app/rs-player?url=https://owrcovcrpy.gpcdn.net/bpk-tv/1706/output/index.m3u8'"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh6ODkYBv581e8Ze3FQ_FbqN8YrBD0rePTaPLkADlWQCR0upM-UufBYlnHVDlksoK9fx4UsutzMu6Y2f6o6axevvgUAl95oxPZfm0Cq4arhmqX9jzuMgxb_811rnk1gLOoAPoheP5l3_MTx6XTXD-ed5wPFkr2wG2b1iXcsjELD2dLIKZk/s1600/atn%20news.png" alt="Atn News"></a></li>
-                    <li><a href="javascript:void(0);" onclick="player.location.href='https://rs-player.netlify.app/rs-player?url=https://owrcovcrpy.gpcdn.net/bpk-tv/1705/output/index.m3u8'"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiX-Wk6cKjwmCHGFWYOwNkJS-N9ZUzN11Cdghx9hzEhpnlHJBnJadles-Spoaq07awkQYsIE9ITVYuo8L9z66LRzvzz65IgQ5TOIIala6hj9VMTLbF87yj2Pwm2Fa_IJ9oOGCsfu9SU6FbgsaR2m7zcKGKsGB-H3AXeaxSiJb0AWKTcGXU/s1600/ekattor%20tv.png" alt="Ekattor TV"></a></li>
-                    <li><a href="javascript:void(0);" onclick="player.location.href='https://rs-player.netlify.app/rs-player?url=https://owrcovcrpy.gpcdn.net/bpk-tv/1702/output/index.m3u8'"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGeFmBwIwkZJDsXEHkJ5G_78IcKWl0SQG7yJKKX1Cc6tJnRNsxr4jBEDaoq0HGZl2Li-TxbKYDyZBUi2Lak7od7AAzqF_4NWRHmvgrLopcJFD_K3fAiFr30S-E38UCAAlbSlkZaeaPHUo3H6oITed_V-JSosSwh9vIvNR4sN7pqgK34vw/s1600/somoy%20tv.jpg" alt="Somoy TV"></a></li>
-                    <li><a href="javascript:void(0);" onclick="player.location.href='https://rs-player.netlify.app/rs-player?url=https://owrcovcrpy.gpcdn.net/bpk-tv/1701/output/index.m3u8'"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhC8AYes98bOV1HR6babki92SwJfG8rXhj90lmwNHXc8qKb-8q41dknfApXxR-lSknDo_a-nXtt5MxKoqGNq02LeXXpMIlo-FjNsfkTboR87deOR6m6gv2BUTh9O74jDEOGcHllLKM2QUjBLAsLj2bX_OwSjCBITrKq9Shpp7PKyyKiyL4/s1600/jamuna%20tv.jpg" alt="Jamuna TV"></a></li>
-                    <li><a href="javascript:void(0);" onclick="player.location.href='https://rs-player.netlify.app/rs-player?url=https://owrcovcrpy.gpcdn.net/bpk-tv/1704/output/index.m3u8'"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgtqVmNOgjlw_0x6aNzioJBWGUzfmC9qZTvYceSzd2hixT6oN8CGopnIGq9V0DIvN9J6STGmYq1O1KGnQDl_mucv2y7lXhePgWtRXlMqgJZ7B9C5wnOWd3M_DKtwAWMZDy6q9fWmnji5zHzeYyI1O6xQVzQZH2h8W95pQ5h6vna2PBanwo/s1600/independent.jpg" alt="Independent TV"></a></li>
-                    <li><a href="javascript:void(0);" onclick="player.location.href='https://rs-player.netlify.app/rs-player?url=https://owrcovcrpy.gpcdn.net/bpk-tv/1703/output/index.m3u8'"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlfbdBl1gqbIl-j_5tOu60wXJqS6DLeHQ18Lr49QCQ146hr6jBmNdNNVGGAQ74L4SSechxF0zKUMazDRdA-um5vBzKkJ3gHct5lDe_yQPbPgUFETRGZkJ59jl_i3VWyUTxy-HZV0ViB35OtzeD3NsEmAGNPAhy2iwWQhhIwfCM7dSqCgA/s1600/channel%2024.jpg" alt="Channel 24"></a></li>
-                    <li><a href="javascript:void(0);" onclick="player.location.href='https://rs-player.netlify.app/rs-player?url=https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/index.m3u8'"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjn5kMnw7YVFq_fp7LZQSeUKT1oEF8h51h7n1qzCUO6gUTQ-GgThwomWo43x2uGfIJq7Zhs9gDiFKiZf8HA8DaNQJqpLgH8i_ibu5lzr9pYZ81k9Oh9qmJabB2kVoxpwGG3aHZiY9VbX3oWF4hjSOCfAfETMEt8UtE0gp-zZrC3SUns0IU/s1600/btv.jpg" alt="BTV"></a></li>
-                    <li><a href="javascript:void(0);" onclick="player.location.href='https://rs-player.netlify.app/rs-player?url=https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/index.m3u8'"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghnDBkyxcnxGJds-Q3HYYh9_ZJIzPGeR5LwORnmQmXP4W9NLrzGZ_dU_TC8qkcjJSWx_6vYSO6Ti1oPi_hidhC48hVZ5K-aqo4RhZQtba-GHURbhQrFYWyknK86rvdILC3b-2e6dTrFIoyidw3Y1eBeAb0bzXm0NMc8oNbP10ZIMvPo2w/s1600/deepto%20tv.jpg" alt="Deepto Tv"></a></li>
-                    <li><a href="javascript:void(0);" onclick="player.location.href='https://rs-player.netlify.app/rs-player?url=https://owrcovcrpy.gpcdn.net/bpk-tv/1722/output/index.m3u8'"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFwqpRIljBY5T6RlCR-GOS1mbZ6hoJ-_1HZ9Cq1ziC6OWZlywe-xxG6ytOqO_4NKYzLiCcJZzWS8pLfClG9aKjgIh9T7sfUoHmiJjgjoJd0RMAGKgkH7OLKDpwzp_E6wPxloVf962kiQsTTKk7m2ZduK_ohtXJUvEabWmc-Uur8G6-8Ac/s1600/atn%20bangla.jpg" alt="ATN Bangla"></a></li>
-                    <li><a href="javascript:void(0);" onclick="player.location.href='https://rs-player.netlify.app/rs-player?url=https://owrcovcrpy.gpcdn.net/bpk-tv/1715/output/index.m3u8'"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgj_aBiGmR6zO9qHZNTVQ09JTaC9NoqGCwhLkxBC7POzv_fcN2VjiKPv6ln8fvgXkk10_cxBd0o9NKU7BKBKNZD8BiXapDF_TAMR9MjLU2K1kVGOREDFefa1RjQLfq8oV6xd5Y28JJi7t-3EixJzAW3WDFqmUxnA2qAtTAXRlPlwlouII8/s1600/bangla%20vision.jpg" alt="Bangla Vision"></a></li>
-                    <li><a href="javascript:void(0);" onclick="player.location.href='https://rs-player.netlify.app/rs-player?url=https://owrcovcrpy.gpcdn.net/bpk-tv/1723/output/index.m3u8'"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDqbDDRsdvvaovOofgvNzznltnlm3mtBsk908IAem7LVe3YIwc5Pr3MYipPHwI7jPhTctzEmKReJYPg6dV9M8NmCTuSnKCq5n0gYgPkKeDvTu11mIGDBVaEkW2K6Rn903oaA6g37X8BVDdZWDFvmLqndaXgZMdz8LSxaojW5Ovs0DMy7g/s1600/channel%20i.jpg" alt="Channel I"></a></li>
-                    <li><a href="javascript:void(0);" onclick="player.location.href='https://rs-player.netlify.app/rs-player?url=https://owrcovcrpy.gpcdn.net/bpk-tv/1716/output/index.m3u8'"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUc82VKL9ZM94eup7HWvm3NHkj-d9oDBdhaOuWaljxScRyqwrN0KJJPSuEwF1IrI2OBrmnw5GDe81XH416hY19fC4e03FHv1OrvUjMrkJXkx-jcPTOOLzDnBNOjo-iI-bWMNVEXASdw5R8qLIQm6jAmdJVdQdNdbWPlCkEFL-wZ0LGnlM/s1600/ntv.jpg" alt="NTV Bangla"></a></li>
-                </ul>
+                <ul class="thumbnail-slider" id="channel-container"></ul>
             </div>
         </div>
     </div>
 
     <div class="marquee-container">
         <div class="notice-label">NOTICE</div>
-        <marquee scrollamount="5" onmouseover="this.stop()" onmouseout="this.start()"> সার্ভার আপডেট চলছে, চ্যানেল লোড হতে ৫-১০ সেকেন্ড সময় লাগতে পারে। কোনো সমস্যা হলে গ্রুপে জানান। </marquee>
+        <marquee scrollamount="6">⚠️ বাফারিং মুক্ত স্ট্রিমিং নিশ্চিত করতে ৫-১০ সেকেন্ড ধৈর্য ধরুন। ধন্যবাদ!</marquee>
     </div>
 
     <footer class="footer-premium">
         <div class="container">
-            <div class="tg-card">
-                <h4 style="color: #fff; margin-bottom: 10px; font-size: 18px;">সাপোর্ট প্রয়োজন?</h4>
-                <p style="color: #888; font-size: 14px; margin-bottom: 0;"> সব আপডেট এবং চ্যানেল রিকোয়েস্টের জন্য আমাদের টেলিগ্রাম গ্রুপে যোগ দিন। </p>
-                <a href="https://t.me/bestiptvlive" target="_blank" class="telegram-btn"> JOIN TELEGRAM </a>
-            </div>
-
-            <div class="ad-wrapper">
-                <div style="background: rgba(255,255,255,0.03); padding: 5px; border-radius: 5px;">
-                    <script type="text/javascript">
-                        atOptions = {
-                            'key' : '774c0e371455f6476668178b5faae5ab',
-                            'format' : 'iframe',
-                            'height' : 50,
-                            'width' : 320,
-                            'params' : {}
-                        };
-                    </script>
-                    <script type="text/javascript" src="https://www.highperformanceformat.com/774c0e371455f6476668178b5faae5ab/invoke.js"></script>
+            <div class="tio-style-banner-fixed">
+                <div class="banner-overlay"></div>
+                <div class="content-wrapper">
+                    <div class="live-circle">LIVE</div>
+                    <div class="brand-logo">RS<span class="tv">TV</span></div>
                 </div>
             </div>
-
-            <div class="copyright"> © 2026 RS LIVE TV | All Rights Reserved </div>
+            <div class="tg-card">
+                <h5 style="color: #fff; font-size: 15px;">সাপোর্ট প্রয়োজন?</h5>
+                <a href="https://t.me/bestiptvlive" target="_blank" class="telegram-btn"> JOIN TELEGRAM </a>
+            </div>
+            <div class="copyright" style="margin-top:20px; color:#555; font-size:12px;">© 2026 RS LIVE TV</div>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        function disableClick() {
-            // Right click disable functionality if needed
-        }
-    </script>
 </body>
 </html>
